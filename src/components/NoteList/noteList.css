@@ -1,0 +1,23 @@
+div.noteList {
+  width: 65%;
+  margin-left: 150px;
+}
+
+div.noteList ul {
+  padding-left: 0;
+}
+
+div.noteList ul li {
+  border: 1px solid rgba(82, 78, 78, 0.481);
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 5px rgb(223, 169, 163);
+}
+
+.title {
+  text-align: left;
+}
+.dateModified {
+  text-align: left;
+  width: 40%;
+}
