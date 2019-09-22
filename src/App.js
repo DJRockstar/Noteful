@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
 import dummyStore from "./dummy";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import NoteFul from "./components/NoteFul";
+import AddFolder from "./components/AddFolder/AddFolder";
+import AddNote from "./components/AddNote/AddNote";
 
 class App extends Component {
   state = {
@@ -28,18 +30,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route
-          path="/noteful"
-          render={props => (
-            <NoteFul
-              notes={this.state.notes}
-              folders={this.state.folders}
-              {...props}
-              onFolderSelect={this.handleFolderSelected}
-              selectedFolder={this.state.selectedFolder}
-            />
-          )}
-        />
+        <Switch>
+          <Route path="/noteful/addFolder" render={() => <AddFolder />} />
+          <Route path="/noteful/addNote" render={() => <AddNote />} />
+          <Route
+            path="/"
+            render={props => (
+              <NoteFul
+                notes={this.state.notes}
+                folders={this.state.folders}
+                {...props}
+                onFolderSelect={this.handleFolderSelected}
+                selectedFolder={this.state.selectedFolder}
+              />
+            )}
+          />
+        </Switch>
         <Redirect exact from="/" to="/noteful" />
       </div>
     );

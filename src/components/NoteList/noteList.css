@@ -3,6 +3,14 @@ div.noteList {
   margin-left: 150px;
 }
 
+.add-note-form {
+  color: white;
+}
+
+.add-note-form:hover {
+  color: rgb(242, 234, 234);
+}
+
 div.noteList ul {
   padding-left: 0;
 }

@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import "./sidebar.css";
 import SideBarList from "./sideBarList";
+import { Link } from "react-router-dom";
 
 class SideBar extends Component {
   state = {};
 
-  handleClick = () => {
-    // alert("im cool");
-  };
+  // handleClick = () => ;
 
   render() {
     return (
@@ -16,6 +15,9 @@ class SideBar extends Component {
           folders={this.props.folders}
           onFolderSelect={this.props.onFolderSelect}
         />
+        <button type="button" className="btn btn-primary">
+          <Link to="/noteful/addFolder">Add Folder</Link>
+        </button>
       </div>
     );
   }

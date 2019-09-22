@@ -31,7 +31,6 @@ class NoteList extends Component {
           {filteredNotes.map(note => (
             <li key={note.id}>
               <h3 className="title">
-                {/*NEED TO BUILD ON TOP OF THIS */}
                 <Link
                   onClick={() => this.handleClick(note.id)}
                   to={`/noteful/notes/${note.id}`} //Updating the state's currentNoteId to the one when clicked
@@ -53,7 +52,9 @@ class NoteList extends Component {
           ))}
         </ul>
         <button type="button" className="btn btn-primary">
-          Add Note
+          <Link to="/noteful/addNote" className="add-note-form">
+            Add Note
+          </Link>
         </button>
       </div>
     );
