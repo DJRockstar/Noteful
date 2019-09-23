@@ -44,7 +44,9 @@ class NoteList extends Component {
                   render={props => <OneNote note={note.content} {...props} />}
                 />
               ) : null}
-              <p className="dateModified">Date modified on {note.modified}</p>
+              <p className="dateModified">
+                <strong>Date modified on </strong> : {note.modified}
+              </p>
               <button type="button" className="btn btn-danger">
                 Delete Note
               </button>

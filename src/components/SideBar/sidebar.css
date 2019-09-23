@@ -13,14 +13,14 @@ div.sidebar ul {
 
 div.sidebar ul li {
   padding: 7%;
-  background-color: rgba(140, 136, 136, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(82, 78, 78, 0.481);
   margin: 10px;
-  box-shadow: 3px 5px rgb(127, 156, 169);
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 div.sidebar ul li:hover {
-  background-color: rgb(172, 169, 169);
+  background-color: rgb(255, 112, 112);
 }
 
 .sidebar a {
