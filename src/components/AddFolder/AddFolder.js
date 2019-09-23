@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./addFolder.css";
-import ValidationError from "../ValidationError";
+import ValidationError from "../ValidationError/ValidationError";
 
 class AddFolder extends Component {
   state = {

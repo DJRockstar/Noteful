@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./addNote.css";
-import ValidationError from "../ValidationError";
+import ValidationError from "../ValidationError/ValidationError";
 
 class AddNote extends Component {
   state = {
