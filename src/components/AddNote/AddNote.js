@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./addNote.css";
 import ValidationError from "../ValidationError/ValidationError";
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 
 class AddNote extends Component {
   state = {
@@ -79,58 +80,60 @@ class AddNote extends Component {
     return (
       <>
         <h1>Add Notes</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="noteTitle">Enter Note Title</label>
-            <input
-              type="text"
-              id="noteTitle"
-              name="noteTitle"
-              className="note-title"
-              onChange={this.handleTitleChange}
-            />
-            {this.state.title.touched && (
-              <ValidationError message={titleError} />
-            )}
-          </div>
-          <div className="form-group">
-            <label htmlFor="noteDesc">Enter Note Description</label>
-            <input
-              type="text"
-              id="noteDesc"
-              name="noteDesc"
-              className="note-desc"
-              onChange={this.handleDescChange}
-            />
-            {this.state.description.touched && (
-              <ValidationError message={descError} />
-            )}
-          </div>
-          <div className="form-group">
-            <label htmlFor="addToFolder">Enter the folder name</label>
-            <input
-              type="text"
-              id="addToFolder"
-              name="addToFolder"
-              className="add-to-folder"
-              onChange={this.handleFolderNameChange}
-            />
-            {this.state.folderName.touched && (
-              <ValidationError message={folderNameError} />
-            )}
-          </div>
-          <button
-            type="submit"
-            className="btn btn-primary"
-            disabled={
-              this.validateTitle() ||
-              this.validateDesc() ||
-              this.validateFolderName()
-            }
-          >
-            Submit
-          </button>
-        </form>
+        <ErrorBoundary>
+          <form onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="noteTitle">Enter Note Title</label>
+              <input
+                type="text"
+                id="noteTitle"
+                name="noteTitle"
+                className="note-title"
+                onChange={this.handleTitleChange}
+              />
+              {this.state.title.touched && (
+                <ValidationError message={titleError} />
+              )}
+            </div>
+            <div className="form-group">
+              <label htmlFor="noteDesc">Enter Note Description</label>
+              <input
+                type="text"
+                id="noteDesc"
+                name="noteDesc"
+                className="note-desc"
+                onChange={this.handleDescChange}
+              />
+              {this.state.description.touched && (
+                <ValidationError message={descError} />
+              )}
+            </div>
+            <div className="form-group">
+              <label htmlFor="addToFolder">Enter the folder name</label>
+              <input
+                type="text"
+                id="addToFolder"
+                name="addToFolder"
+                className="add-to-folder"
+                onChange={this.handleFolderNameChange}
+              />
+              {this.state.folderName.touched && (
+                <ValidationError message={folderNameError} />
+              )}
+            </div>
+            <button
+              type="submit"
+              className="btn btn-primary"
+              disabled={
+                this.validateTitle() ||
+                this.validateDesc() ||
+                this.validateFolderName()
+              }
+            >
+              Submit
+            </button>
+          </form>
+        </ErrorBoundary>
       </>
     );
   }

@@ -24,7 +24,6 @@ class AddFolder extends Component {
     if (name.length === 0) {
       return "Name is required";
     } else if (name.length <= 3) {
-      //   console.log("inside if statement");
       return "Name length should be greater than 3 characters";
     }
   };

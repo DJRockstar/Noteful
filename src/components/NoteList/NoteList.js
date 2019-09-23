@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
-import "./noteList.css";
 import OneNote from "./OneNote";
+import PropTypes from "prop-types";
+import "./noteList.css";
 
 class NoteList extends Component {
   state = {
     currentNoteId: ""
   };
+  // ====== PROP TYPES ==========
+  static propTypes = {
+    notes: PropTypes.array,
+    selectedFolder: PropTypes.object
+  };
 
+  //========EVENT HANDLERS ============
   handleClick = currentNoteId => {
     console.log(currentNoteId);
     this.setState({

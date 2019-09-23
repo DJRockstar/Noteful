@@ -5,6 +5,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import NoteFul from "./components/NoteFul";
 import AddFolder from "./components/AddFolder/AddFolder";
 import AddNote from "./components/AddNote/AddNote";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 class App extends Component {
   state = {
@@ -36,13 +37,15 @@ class App extends Component {
           <Route
             path="/"
             render={props => (
-              <NoteFul
-                notes={this.state.notes}
-                folders={this.state.folders}
-                {...props}
-                onFolderSelect={this.handleFolderSelected}
-                selectedFolder={this.state.selectedFolder}
-              />
+              <ErrorBoundary>
+                <NoteFul
+                  notes={this.state.notes}
+                  folders={this.state.folders}
+                  {...props}
+                  onFolderSelect={this.handleFolderSelected}
+                  selectedFolder={this.state.selectedFolder}
+                />
+              </ErrorBoundary>
             )}
           />
         </Switch>

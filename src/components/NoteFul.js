@@ -4,6 +4,9 @@ import SideBar from "./SideBar/SideBar";
 import NoteList from "./NoteList/NoteList";
 
 const NoteFul = props => {
+  if (props.notes.length < 0) {
+    throw new Error("Something went wrong");
+  }
   return (
     <>
       <Jumbotron />

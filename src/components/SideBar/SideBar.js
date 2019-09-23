@@ -4,10 +4,6 @@ import SideBarList from "./sideBarList";
 import { Link } from "react-router-dom";
 
 class SideBar extends Component {
-  state = {};
-
-  // handleClick = () => ;
-
   render() {
     return (
       <div className="sidebar">
